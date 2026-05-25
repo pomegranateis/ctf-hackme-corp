@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  target:
+    build:
+      context: ./target
+      dockerfile: Dockerfile
+    container_name: ctf-target
+    hostname: hackme-corp
+    environment:
+      - STUDENT_ID=${STUDENT_ID:-defaultstudent}
+    ports:
+      - "21:21"
+      - "22:22"
+      - "80:80"
+      - "3306:3306"
+    cap_add:
+      - NET_ADMIN
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    restart: unless-stopped
+    volumes:
+      - ctf_data:/ctf_logs
+    networks:
+      - ctf_network
+
+networks:
+  ctf_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+
+volumes:
+  ctf_data:

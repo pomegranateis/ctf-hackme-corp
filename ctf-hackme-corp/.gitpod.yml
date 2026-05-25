@@ -1,0 +1,27 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Install Tools
+    init: bash .devcontainer/install_tools.sh
+    command: echo "Tools ready."
+
+  - name: CTF Target
+    command: |
+      export STUDENT_ID=$(echo "$GITPOD_GIT_USER_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
+      echo "Student ID: $STUDENT_ID"
+      bash start_ctf.sh
+
+ports:
+  - port: 80
+    onOpen: notify
+    visibility: private
+  - port: 22
+    onOpen: ignore
+    visibility: private
+  - port: 21
+    onOpen: ignore
+    visibility: private
+  - port: 3306
+    onOpen: ignore
+    visibility: private

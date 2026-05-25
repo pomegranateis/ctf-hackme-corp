@@ -1,0 +1,43 @@
+{
+  "name": "CTF HackMe Corp — Attacker Machine",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "enableNonRootDocker": "true"
+    }
+  },
+
+  "postCreateCommand": "bash .devcontainer/install_tools.sh",
+
+  "postStartCommand": "bash start_ctf.sh",
+
+  "forwardPorts": [21, 22, 80, 3306],
+
+  "portsAttributes": {
+    "80": { "label": "CTF Web Target", "onAutoForward": "notify" },
+    "22": { "label": "CTF SSH Target", "onAutoForward": "silent" },
+    "21": { "label": "CTF FTP Target", "onAutoForward": "silent" },
+    "3306": { "label": "CTF MySQL Target", "onAutoForward": "silent" }
+  },
+
+  "containerEnv": {
+    "STUDENT_ID": "${localEnv:GITHUB_USER}"
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.remote-explorer",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.fontSize": 13
+      }
+    }
+  },
+
+  "remoteUser": "vscode"
+}
