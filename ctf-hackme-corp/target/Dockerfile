@@ -53,7 +53,7 @@ RUN useradd -m -s /bin/bash student && \
 # vsftpd configuration — anonymous login enabled (intentional for CTF)
 RUN echo "anonymous_enable=YES\nlocal_enable=NO\nwrite_enable=NO\nanon_root=/srv/ftp\npasv_enable=YES\npasv_min_port=30000\npasv_max_port=30009" > /etc/vsftpd.conf && \
     mkdir -p /srv/ftp/pub && \
-    chown -R ftp:ftp /srv/ftp
+    chown -R ftp:ftp /srv/ftp && mkdir -p /var/run/vsftpd/empty
 
 # Supervisor config to start all services
 COPY supervisord.conf /etc/supervisor/conf.d/ctf.conf
