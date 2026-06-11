@@ -4,13 +4,6 @@
 **Target:** localhost (CTF HackMe Corp)
 **Assessment:** Ethical Hacking & Penetration Testing
 
----
-
-> ⚠️ Fill in every section. Blank sections = 0 marks.
-> Include real terminal output or screenshots for every command.
-
----
-
 ## Executive Summary
 
 A full penetration test was conducted against the HackMe Corp internal
