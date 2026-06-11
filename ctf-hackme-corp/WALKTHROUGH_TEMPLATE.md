@@ -1,6 +1,6 @@
 # Penetration Test Walkthrough
-**Student ID:** <!-- your GitHub username -->
-**Date:**
+**Student ID:** pomegranateis
+**Date:** 09 June 2026
 **Target:** localhost (CTF HackMe Corp)
 **Assessment:** Ethical Hacking & Penetration Testing
 
@@ -626,14 +626,13 @@ exploitation, sudo abuse, and restricted shell escapes.
 
 | Challenge | Flag Submitted | Marks |
 |-----------|---------------|-------|
-| 1 — NMAP Banner | FLAG{...} | /2 |
-| 2 — SSH Weak Creds | FLAG{...} | /3 |
-| 3 — Hidden Directory | FLAG{...} | /3 |
-| 4 — SQL Injection | FLAG{...} | /4 |
-| 5 — File Upload RCE | FLAG{...} | /4 |
-| 6 — SUID Privesc | FLAG{...} | /4 |
-| **CTF Total** | | **/20** |
-| Walkthrough Quality | | /5 |
+| 1 — NMAP Banner | FLAG{pomegranateis_nmap_b4nner_scan} | /2 |
+| 2 — SSH Weak Creds | FLAG{pomegranateis_ssh_w3ak_cred5} | /3 |
+| 3 — Hidden Directory | FLAG{pomegranateis_r0b0ts_h1dden_d1r} | /3 |
+| 4 — SQL Injection | FLAG{pomegranateis_sql1_inj3ct} | /4 |
+| 5 — File Upload RCE | FLAG{pomegranateis_rce_upl04d_shell} | /4 |
+| 6 — SUID Privesc | FLAG{pomegranateis_su1d_r00t_3scalat3} | /4 |
+| **CTF Total** | | **20/20** || Walkthrough Quality | | /5 |
 | Viva | | /10 |
 | **Grand Total** | | **/35** |
 
